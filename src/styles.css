@@ -156,6 +156,39 @@ button, input, textarea, select { font: inherit; }
 .audit-row p { margin: 5px 0; font-size: 10px; color: #596c78; }
 .audit-row small { font-size: 9px; color: var(--muted); }
 
+.merge-bar { display: flex; align-items: center; gap: 9px; padding: 7px 18px; font-size: 11px; border-bottom: 1px solid transparent; }
+.merge-bar .merge-icon { display: grid; place-items: center; flex: none; }
+.merge-bar .merge-text { flex: 1; }
+.merge-bar.ok { background: #eef7f2; color: #17664b; border-bottom-color: #cbe7db; }
+.merge-bar.warn { background: #fff7e8; color: #8c5818; border-bottom-color: #efd5ae; }
+.merge-bar.info { background: #eaf3fa; color: #1f5f8d; border-bottom-color: #cfe2f0; }
+.merge-bar.danger { background: #fbeeee; color: #963231; border-bottom-color: #f0c9c8; }
+.merge-bar.info .merge-icon svg { animation: merge-spin 1.4s linear infinite; }
+@keyframes merge-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+.field-meta { display: inline-block; font-size: 9px; color: var(--muted); background: #f0f4f7; border: 1px solid #dde6ec; border-radius: 3px; padding: 1px 6px; white-space: nowrap; }
+.field-meta.source-server { color: #2c5f8a; background: #e8f1f8; border-color: #cfe0ee; }
+.field-meta.source-draft { color: #8a5a17; background: #fdf3e0; border-color: #ecd9ae; }
+.field-meta.source-override { color: #17664b; background: #e8f5ef; border-color: #c3e4d5; }
+.field-meta.source-signature { color: #6d4a8a; background: #f3ecf9; border-color: #dcc9ec; }
+.field-meta-row { grid-column: 1 / -1; margin: -8px 0 0; }
+.field-meta-row.wide-field { grid-column: 1 / -1; }
+.witness-check { flex-wrap: wrap; }
+.witness-meta { margin-left: auto; }
+
+.override-applied { background: #f1f8f4; border-color: #c3e4d5; color: #17664b; }
+.override-applied h3 { margin: 10px 0 4px; font-size: 13px; }
+.override-applied p { font-size: 10px; line-height: 1.6; margin: 0; }
+
+.conflict-hint { font-size: 11px; color: #596c78; line-height: 1.6; margin: 0 0 12px; }
+.conflict-row { border: 1px solid #e2e9ee; border-radius: 5px; padding: 11px 13px; margin-bottom: 10px; background: #fafcfd; }
+.conflict-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.conflict-head strong { font-size: 12px; }
+.conflict-head small { font-size: 9px; color: var(--muted); white-space: nowrap; }
+.conflict-row .fui-RadioGroup { display: grid; gap: 6px; }
+.conflict-row .fui-Radio__label { font-size: 11px; }
+.conflict-row b { color: #182b3a; }
+
 @media (max-width: 1100px) {
   .overview-grid, .execution-grid, .release-grid, .audit-grid { grid-template-columns: 1fr; }
   .overview-side, .execution-side, .release-side { grid-template-columns: 1fr 1fr; }
